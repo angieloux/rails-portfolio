@@ -1,0 +1,31 @@
+<!---------- GRAPHICAL COMPONENT: SOCIAL LINKS WITH LOGO IMAGES ---------->
+    <main>
+        <div class="social-container">
+            <div class="social-links">
+                <p>Find me online:</p>
+                    <div class="social-icons">
+                    <%= link_to image_tag("/images/linkedin-logo.png"), 'https://www.linkedin.com/in/angieloux', class: "link", alt: "Linkedin Logo", width: 40, height: 40, target: "_blank" %>
+                    <%= link_to image_tag("/images/github-logo.png"), 'https://github.com/angieloux', class: "link", alt: "Github Logo", width: 40, height: 40, target: "_blank" %>
+                    <%= link_to image_tag("/images/twitter-logo.png"), 'https://twitter.com/angie_loux', class: "link", alt: "Twitter Logo", width: 40, height: 40, target: "_blank" %>
+                    </div>
+            </div>
+
+            <!---------- TEXT COMPONENT: MESSAGE ME FORM ---------->
+            <div class="message-me-form">
+                <p>Wanna chat? Send me a message below:</p>
+                <form action="https://formspree.io/f/xnqllzje" method="POST">
+                    <label for="fullname">Full name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="Email" id="email" placeholder="example@domain.com" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." style="height:170px" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+           </div>
+
+        </div>
+    </main>
