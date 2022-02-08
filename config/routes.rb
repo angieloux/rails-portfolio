@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   get '/pages/projects', to: 'pages#projects', as: 'projects'
   get '/pages/contact', to: 'pages#contact', as: 'contact'
 
+  get 'blogs/new', to: 'blog#new', as: 'new_blog'
+  post 'blogs', to: 'blog#create'
+
 end

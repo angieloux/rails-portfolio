@@ -18,7 +18,6 @@ class PagesController < ApplicationController
     def contact
     end 
 
-    def show 
-    end 
+   
 
 end
