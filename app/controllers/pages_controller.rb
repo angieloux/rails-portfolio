@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     end
 
     def blog 
+        @blogs = Blog.all
     end
 
     def contact
@@ -19,4 +20,5 @@ class PagesController < ApplicationController
 
     def show 
     end 
+
 end

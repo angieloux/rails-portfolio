@@ -14,10 +14,10 @@ if Category.count == 0
 end
 
 if Blog.count == 0
-    Blog.create!(title: 'Living in San Francisco as an Aussie', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 1, created_at: Faker::Date.backward(days: 1))
-    Blog.create!(title: '20 CSS shortcuts that saved my life', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 2, created_at: Faker::Date.backward(days: 5))
-    Blog.create!(title: 'Recreating Mamma Mia in Paros, Greece', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 1, created_at: Faker::Date.backward(days: 10))
-    Blog.create!(title: 'What its really like to be a female gamer', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 3, created_at: Faker::Date.backward(days: 12))
-    Blog.create!(title: 'Canadian Summer vs Winter: which is better?', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 1, created_at: Faker::Date.backward(days: 50))
-    Blog.create!(title: "Nature is my Spirituality: and here's why", content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 4, created_at: Faker::Date.backward(days: 67))
+    Blog.create!(title: 'Living in San Francisco as an Aussie', content: Faker::Lorem.paragraph(sentence_count: 30), category_id: 1, created_at: (DateTime.now - (rand * 21)))
+    Blog.create!(title: '20 CSS shortcuts that saved my life', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 2, created_at: (DateTime.now - (rand * 21)))
+    Blog.create!(title: 'Recreating Mamma Mia in Paros, Greece', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 1, created_at: (DateTime.now - (rand * 21)))
+    Blog.create!(title: 'What its really like to be a female gamer', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 3, created_at: (DateTime.now - (rand * 21)))
+    Blog.create!(title: 'Canadian Summer vs Winter: which is better?', content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 1, created_at: (DateTime.now - (rand * 21)))
+    Blog.create!(title: "Nature is my Spirituality: and here's why", content: Faker::Lorem.paragraph(sentence_count: 3), category_id: 4, created_at: (DateTime.now - (rand * 21)))
 end

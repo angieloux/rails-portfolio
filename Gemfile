@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "pg", "~> 1.3"
 
 gem "faker", "~> 2.19"
+
+gem "devise", "~> 4.8"
