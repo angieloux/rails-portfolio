@@ -1,0 +1,12 @@
+<header>
+        <nav class="nav-container">
+            <label for="hamburger-button">&#9776;</label>
+            <input type="checkbox" id="hamburger-button">
+            <ul class="nav-list" id="nav-list">
+                <li><%= link_to 'About', about_path, class: "link"%></li>
+                <li><%= link_to 'Projects', projects_path, class: "link"%></li>
+                <li><%= link_to 'Blog', blog_path, class: "link"%></li>
+                <li><%= link_to 'Contact', contact_path, class: "link"%></li>
+            </ul>
+        </nav>
+    </header>

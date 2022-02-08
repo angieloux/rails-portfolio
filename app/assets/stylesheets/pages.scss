@@ -1,3 +1,536 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.4),rgba(4,9,30,0.4)),url(./Images/home-background-phone.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  background-color:rgba(9, 22, 56, 0.7);
+}
+
+@media only screen and (min-width: 500px){
+  body {
+    background-image: linear-gradient(rgba(4,9,30,0.4),rgba(4,9,30,0.4)),url(./Images/home-background-scale.png);
+    background-color:rgba(9, 22, 56, 0.7);
+  }
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+p, span, h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+}
+
+/* ---- GRAPHICAL COMPONENT: FOOTER WITH CONTACT LOGOS (HOME PAGE) ---- */
+
+.footer-container {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-links a {
+  padding: 0 5px;
+}
+
+/* ---- TEXT COMPONENT: FOOTER WITH COPYRIGHT (CONTENT PAGES) ---- */
+
+.footer-content-pages {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  background-color: rgba(9, 14, 37, 0.9);
+  width: 100%;
+}     
+#copyright {
+  text-transform: uppercase;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 80%;
+}
+
+/* --------------------- TEXT COMPONENT: NAVIGATION/ HEADER --------------------- */
+
+/* ---- Nav: hamburger menu for mobile ---- */
+
+.nav-container label {
+    display: block;
+    cursor: pointer;
+    margin: 0 40px 0 0;
+    font-size: 2.5rem;
+    line-height: 70px;
+    width: 26px;
+    float: right;
+    color: white;
+}
+
+.nav-container {
+    background-color: rgba(9, 14, 37, 0.9);
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    top: 0px; 
+    width: 100%;
+    border-bottom: white solid 5px;
+}
+
+.nav-list {
+    text-align: center;
+    width: 100%;
+    display: none;
+    border-top: 1px solid #EAEAEB;
+    background-color: rgba(9, 14, 37, 0.9);
+}
+
+.nav-list a {
+    display: block;
+    margin: 0;
+}
+
+#active-link {
+    background-color:rgb(252, 185, 150); 
+}
+
+.nav-list a:hover {
+    background-color: #4e976f;
+}
+
+#hamburger-button:checked + .nav-list {
+    display: block;
+    position: absolute;
+    top: 70px;
+    z-index: 2;
+    font-size: 2rem;
+}
+
+/* ---- Hide checkbox ---- */
+#hamburger-button {
+    display: none;
+}
+
+/* ---- Nav: horizontal menu for tablet/desktop ---- */
+@media only screen and (min-width: 500px){
+  
+  .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.4rem;
+    border-top:  none;
+    background-color: transparent;
+  }
+
+  .nav-container {
+      box-shadow: none;
+      line-height: inherit;
+      padding-top:20px;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    background-color: transparent;
+
+  }
+  
+/* ---- Nav: hide hamburger menu ---- */
+  .nav-container label {
+    display: none;
+  }
+ 
+  .nav-list li {
+    list-style: none;
+    font-size: 1.2rem;
+  }
+
+/* ---- Nav: Expanding underline on hover ---- */
+  .nav-list li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    margin: auto;
+    transition: 2s;
+    display: block;
+
+  }
+  
+  .nav-list li:hover::after{
+    width:100%;
+    background-color: white;
+}
+
+  .nav-list a:hover {
+      background-color: transparent;
+      font-size: 1.2rem;
+}
+
+#active-link {
+    background-color: transparent;
+    color:rgb(131, 173, 140);
+}
+}
+  
+/* ---- Condense nav menu items for laptop/desktop --- */
+@media only screen and (min-width: 770px){
+.nav-list {
+    justify-content:center;
+}
+
+.nav-list li {
+    padding: 0 50px;
+}}
+
+/* ---------- TEXT COMPONENT: WELCOME, INTRO AND SUMMARY ---------- */
+.main-container {
+  height: 80%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding-top: 5.5rem;
+}
+
+h1, .main-container h2, .link {
+    text-shadow: 2px 2px #0a1f11;
+}
+
+.main-container h1 {  
+  width: 70%;
+}  
+
+.main-container h2 {
+  width: 80vw;
+  color: white;
+  text-shadow: 2px 2px #0a1f11;
+  font-size: 1.9em;
+  padding: 30px 0 50px 0;
+  font-family: 'Teko', sans-serif;
+}
+
+h1 {
+  font-size: 3.7rem;
+  line-height: 3rem;
+  padding-top: 5rem;
+  font-weight: bold;
+  text-decoration:underline overline;
+  text-underline-offset: 10px;
+}
+
+
+/* ---- Adjust padding of main container text for tablet ---- */
+@media only screen and (min-width: 500px){
+  .main-container {
+  padding-top: 15rem;
+}}
+
+/* ---- Adjust padding of main container text for laptops/bigger screens ---- */
+@media only screen and (min-width: 1000px){
+  .main-container {
+  padding-top: 10rem;
+
+}}
+
+/* ---- Adjust padding of main container text for desktop ---- */
+@media only screen and (min-width: 1500px){
+  .main-container {
+  padding-top: 15rem;
+}}
+
+/* ----------------TEXT COMPONENT: CALL TO ACTION ----------------- */
+.call-to-action {
+  display: block;
+  border: white solid 2px;
+  padding: 7px 10px;
+  font-size: 20px;
+  background-color: rgba(10, 78, 78, 0.2);
+  cursor: pointer;
+}
+
+/* ---- Horizontally center icon in call-to-action button ---- */
+#download {
+  position: relative;
+  top: 5px;
+}
+
+/* ---- Hover styling on call to action button ---- */
+.call-to-action:hover {
+  background-color: rgba(255,201,172,1); 
+  transition: 1s;
+  border: 1px solid white;
+  padding: 12px 13px;
+}
+/* --------------------- CONTENT PAGES (PROJECTS/ABOUT ME/BLOG --------------------- */
+
+/* ---- Align page content in one scrollable column on phone/tablet ---- */
+.page-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* --------------------- TEXT COMPONENT: PAGE TITLE BOX --------------------- */
+.page-rectangle {
+    width: 100%;
+    background-color:rgba(10, 78, 78, 0.1);
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+#arrow-down {
+    padding-top: 100px;
+    font-size: 7em;
+  }
+
+/* ---------- GRAPHICAL/TEXT COMPONENTS: PROJECTS / BLOG POSTS / ABOUT ME (content sizing) ---------- */
+  .page-content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.2);
+    color: black;
+  }
+
+  .content-text-wrapper li, .content-text-wrapper p, h3{
+    border-bottom:rgba( 21, 64,113,0.2) solid 2px;
+    padding: 2%;
+    font-size: 1.2rem;
+    margin: 2% 3%;
+  }
+ 
+  .content-titles {
+    padding: 20px 20px;
+    font-size:1.8rem;
+  }
+  .content-box {
+    flex-direction: column;
+    padding: 2rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-text {
+    margin: 20px 20px;
+}
+
+.content-text-wrapper {
+  border-radius: 20px;
+  }
+  .project-image, .blog-image {
+    box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Align page content in side-by-side boxes on tablet---- */
+  
+@media only screen and (min-width: 500px){
+  .page-container {
+      display: flex;
+      flex-direction: row-reverse;
+      height: inherit;
+  }
+
+  .page-content {
+      flex-basis: 50%;
+      flex-wrap: wrap;
+      padding: 10px 10px;
+      justify-content: center;
+      height: inherit;
+ }
+/* ---- Keep title text scrolling with .page-content ---- */
+  .page-rectangle {
+      flex-basis: 50%;
+      display: flex;
+      position: sticky;
+      top: 0px;
+  }
+}
+/* -------- GRAPHICAL COMPONENT: BLOG POSTS (expandable) -------- */
+
+.expanded-text {
+  height: 100px;
+  overflow: hidden;
+}
+.blog-text {
+  position: relative;
+  display: flex;
+}
+.blog-text label {
+  position: relative;
+  justify-content: flex-start;
+  margin: 5%;
+}
+.blog-text input {
+  display: none;
+}
+.blog-text label::after {
+  content: "Read More";
+}
+.blog-text input:checked + label::after {
+  content: "Show Less";
+}
+.blog-text input:checked ~ .expanded-text {
+  height: 100%;
+}
+
+/* ---- TEXT COMPONENT: ABOUT ME (Taper experience paragraphs from right to left) ---- */
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+
+/* ---- switch .page-rectangle to the left ---- */
+@media only screen and (min-width: 500px){
+  #rectangle-left {
+      order: 1;
+  }
+}
+
+/* ---------- GRAPHICAL COMPONENT: SKILLS ---------- */
+.icon-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.skill-icons {
+    margin: 2% 3%;
+}
+
+/* ---------- TEXT COMPONENT: 21 THINGS ---------- */
+.content-text-wrapper li {
+  list-style-position:inside; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li::marker {
+  color: rgba(10, 19, 101, 0.423);
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 770px){
+    .content-text-wrapper {
+        margin: auto 6%;
+        border-radius: 20px;
+    }
+    
+    .content-box {
+      flex-wrap: wrap;
+      flex-basis: 50%;
+    }
+    
+    #about-me-box {
+    flex-basis: 80%;
+    }
+}
+
+/* --------------------------------- CONTACT PAGE --------------------------------- */
+
+/* ---------- GRAPHICAL COMPONENT: SOCIAL LINKS WITH LOGO IMAGES ----------*/
+.social-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgba( 82,161,137,0.7); 
+    margin: 10px 40px 40px 40px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .social-links p, .message-me-form p {
+    color: white;
+    font-size: 1.8em;
+    font-family:'Fjalla One', sans-serif;
+    text-align: center;
+  }
+  
+  .social-links img {
+    margin: 30px 10px 0 20px;
+  }
+  
+/* ---------- TEXT COMPONENT: MESSAGE ME FORM ----------*/
+  .message-me-form {
+    background-color: rgba( 82,161,137,0.7);
+    margin: 0px 40px 40px 40px;
+    padding: 25px;
+    border-radius: 20px;
+  }
+  
+  .message-me-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .message-me-form form label {
+    text-align: left;
+    font-size: 1rem;
+    margin: 15px 0 10px 0;
+    color: white;
+  }
+  
+  .message-me-form form textarea,
+  .message-me-form form input[type=email],
+  .message-me-form form input[type=text] {
+    border-radius: 7px;
+    border: none;
+    padding: 12px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.8em;
+  }
+  
+  .message-me-form form input[type=submit] {
+    background-color: rgba(18, 29, 74, 0.582);
+    box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    color: white;
+    padding: 14px 20px;
+    margin: 25px 0 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .message-me-form form input[type=submit]:hover {
+    background-color: rgba(244, 166, 124, 0.911);
+  }
+  
+/* Amend contact form size on screens 500px and up */
+  @media only screen and (min-width: 500px) {
+    .message-me-form,
+    .social-links {
+      width: 515px;
+      margin: 40px auto;
+    }
+  }
