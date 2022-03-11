@@ -1,4 +1,12 @@
 <%= form_with model: @blog do |form| %>
+
+<% if @blog.image.attached? %>
+    <%= image_tag @blog.image, style: "width: 200px; display: block" %>
+<% end %>
+
+<%# <%= form.label :image %>
+<%# <%= form.file_field :image %> 
+
 <%= form.label :title %>
 <%= form.text_field :title %>
 

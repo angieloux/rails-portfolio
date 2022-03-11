@@ -1,38 +1,31 @@
 <!---------- TEXT COMPONENT: PAGE TITLE BOX ---------->
-    <main class="page-container" >
-        <div class="page-rectangle">
-            <h1 id="title">Blog</h1>
-            <i class="fa fa-angle-double-down" id="arrow-down"></i>
+<main class="page-container" >
+  <div class="page-rectangle">
+    <h1 id="title">Blog</h1>
+    <i class="fa fa-angle-double-down" id="arrow-down"></i>
+  </div>
+  <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
+  <section class="page-content" >
+    <% @blogs.each do |blog| %>
+      <article class="content-box">
+        <% if blog.image.attached? %>
+          <%= image_tag url_for(blog.image), class: "blog-image", width: 300, height: 200 %>
+        <% end %>
+        <h2 class="content-titles"><%= blog.title %></h2>
+        <div class="content-text">
+          <h5><%= blog.category.name %></h5>
+          <div class="content-text-wrapper">
+            <h3>Posted | <%= blog.created_at.strftime('%a %d %b %Y')  %></h3>
+            <div class="blog-text">
+              <div class="expanded-text">
+                <p><%= blog.content %>...</p>
+              </div>
+            </div>
+            <%= link_to "Read More", blog_path(blog) %>
+          </div>
         </div>
-
-        <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
-        <section class="page-content" >
-           <% @blogs.each do |blog| %>
-
-  
-  <article class="content-box">
-                <%= image_tag "/images/Blog1.png", class: "blog-image", alt: "A San Francisco Tram driving down a busy street", width: 300, height: 200 %>
-                <h2 class="content-titles"><%= blog.title %></h2>
-                <div class="content-text">
-                <h5><%= blog.category.name %></h5>
-                    <div class="content-text-wrapper">
-                        <h3>Posted | <%= blog.created_at.strftime('%a %d %b %Y')  %></h3>
-                        <div class="blog-text">
-                            <%# <input id="rm1" type="checkbox"> %>
-                            <%# <label for="rm1"></label> %>
-                            
-                            <div class="expanded-text">
-                                <p><%= blog.content %>...</p>
-                            </div>
-                            
-                        </div>
-                        <%= link_to "Read More", blog_path(blog) %>
-                    </div>
-                </div>
-            </article>
-
-<%end%>
-            <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
-           
-        </section>
-    </main>
+      </article>
+    <%end%>
+    <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
+  </section>
+</main>

@@ -1,18 +1,16 @@
 <!---------- TEXT COMPONENT: PAGE TITLE BOX ---------->
-    <main class="page-container" >
-        <div class="page-rectangle">
-            <h2><%= @blog.title %></h2>
-            <%# <i class="fa fa-angle-double-down" id="arrow-down"></i> %>
-        </div>
-
-        <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
-        
-        <section class="page-content" >
-        <%= image_tag "/images/Blog1.png", class: "blog-image", alt: "A San Francisco Tram driving down a busy street", width: 300, height: 200 %>
-        
-        <%= @blog.content %>
-        <h3>Posted | <%= @blog.created_at.strftime('%a %d %b %Y')  %></h3>
-            <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
-           
-        </section>
-    </main>
+<main class="page-container" >
+  <div class="page-rectangle">
+    <h2><%= @blog.title %></h2>
+    <%# <i class="fa fa-angle-double-down" id="arrow-down"></i> %>
+  </div>
+  <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
+  <section class="page-content" >
+    <% if @blog.image.attached? %>
+      <%= image_tag url_for(@blog.image), alt: "A San Francisco Tram driving down a busy street", style: "width: 200px height: 200px display: block", class: "blog-image" %>
+    <% end %>
+    <%= @blog.content %>
+    <h3>Posted | <%= @blog.created_at.strftime('%a %d %b %Y')  %></h3>
+    <!---------- GRAPHICAL COMPONENT: BLOG IMAGE & TEXT ---------->
+  </section>
+</main>
