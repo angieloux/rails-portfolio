@@ -1,10 +1,18 @@
-class BlogController < ApplicationController
+class BlogsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_blog, only: [:edit, :update, :destroy]
+    before_action :set_blog, only: [:edit, :show, :update, :destroy]
     before_action :set_categories, only: [:new, :edit]
 
+    def index 
+        @blogs = Blog.all
+    end 
+
     def new
-        @blog = Blog.new
+       @blog = Blog.new
+    end
+
+    def show
+
     end
     
     def create 
@@ -20,7 +28,9 @@ class BlogController < ApplicationController
     end 
 
     def edit
-
+        @blog = Blog.edit(blog_params)
+        if @blog.edit
+        end
     end
     
     def update

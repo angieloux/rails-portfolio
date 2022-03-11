@@ -11,10 +11,6 @@ class PagesController < ApplicationController
     def projects
     end
 
-    def blog 
-        @blogs = Blog.all
-    end
-
     def contact
     end 
 
